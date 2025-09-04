@@ -1,3 +1,7 @@
+
+-- LAB 3
+create user aster IDENTIFIED by aster;
+
 -- table-schema
 -- rows -> tuple
 -- columns --> attributes
@@ -48,3 +52,4 @@ select * from students;
 insert into students(id, std_name, email, age,city, salary, dept_id) values(102, 'Mr.Wow', 'wow@wow.com', 20, 'Kiranchi', 500000, 5);
 
 -- diff between truncate and delete?
+
