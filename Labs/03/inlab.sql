@@ -13,16 +13,16 @@
 
 -- Q3:
  alter table employees drop constraint salary_constraint;
- insert into employees(01, 'aster', 1500, 01);
+ insert into employees values(01, 'aster', 1500, 01);
 
 -- Q4:
  create table departments(
     dept_id int PRIMARY KEY,
     dept_name varchar(50) UNIQUE
  );
- insert into departments(1, 'cs');
- insert into departments(2, 'ai');
- insert into departments(3, 'marketing');
+ insert into departments values(1, 'cs');
+ insert into departments values(2, 'ai');
+ insert into departments values(3, 'marketing');
 
 -- Q5:
  alter table employees add constraint dept_foreignkey foreign key (dept_id) references departments(dept_id);
