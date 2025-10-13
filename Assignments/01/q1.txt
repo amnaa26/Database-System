@@ -1,0 +1,36 @@
+(a) What are the problems with File system data management?
+File systems store data in separate, isolated files, leading to significant limitations:
+- Data Redundancy and Inconsistency: The same data is duplicated across multiple files, wasting storage and leading to inconsistencies when updates are not applied universally.
+- Data Isolation and Difficulty in Access: Data is scattered in files with different formats, making it difficult to write application programs to retrieve related data. Efficient, ad-hoc data retrieval is not supported.
+- Integrity Problems: There is no easy way to enforce data integrity constraints (e.g., valid data ranges, relational rules) as these rules are buried within application code.
+- Atomicity Problems: File systems cannot ensure the "all-or-nothing" execution of a set of operations, risking data corruption during failures.
+- Concurrent Access Anomalies: Uncontrolled simultaneous access by multiple users can result in incorrect data updates.
+- Security Issues: Applying fine-grained security controls (e.g., restricting access to specific data items like salaries) is difficult, as security is often only applicable at the file level.
+
+(b) Explain the usage of the Composite Primary key with an example.
+A composite primary key is a primary key that consists of two or more attributes (columns) which, when combined, uniquely identify a record in a table. A single column is not sufficient to guarantee uniqueness.
+Example:
+In a table Enrollment(StudentID, CourseID, Grade),
+(StudentID, CourseID) together form a composite primary key since one student can enroll in many courses, but the same student cannot enroll in the same course twice.
+
+(c) what operations are performed by the application program when DBMS is used.
+When using a DBMS, the application program performs tasks like:
+- Sending queries (INSERT, UPDATE, DELETE, SELECT) to the DBMS.
+- Retrieving and displaying data from the database.
+- Validating inputs before storing them.
+- Managing transactions to ensure data consistency.
+- Handling errors and exceptions that occur during database operations.
+
+(d) which independence is difficult to achieve in three schema architectures and why. Elaborate with an example.
+Logical data independence is harder to achieve because changes in the logical schema (like adding/removing attributes or relationships) usually affect how applications access the data.
+Example:
+If a new column “Email” is added in the “Employee” table, then all application programs that access that table might need modification to include this new attribute.
+
+(e) A key is a superkey but not vice versa. Explain this statement with an example.
+A superkey is any set of attributes that uniquely identifies a record.
+A key is a minimal superkey, meaning no unnecessary attributes.
+Example:
+In a table Student(RollNo, Name, Email)
+{RollNo, Email} → Superkey
+{RollNo} → Key
+So every key is a superkey, but not every superkey is a key.
